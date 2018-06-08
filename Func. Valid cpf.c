@@ -1,12 +1,11 @@
-<<<<<<< HEAD
+
 /*Verifica apenas o formato do cpf '000.000.000-00'*/
-=======
->>>>>>> 364eb26ed243644ac87b5c39a56000519e2e5f97
+
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
 
-int valid(char x[]){ /*Retorna Valor//Recomend·vel string ter mais doque preciso*/
+int valid(char x[]){ /*Retorna Valor//Recomend√°vel string ter mais doque preciso*/
     int i,
         aux=1;
 
@@ -36,7 +35,7 @@ for(i=0;i<15;i++){
     return 1;
 }
 
-void valida(char x[]){ /*Retorna com Print//Recomend·vel string ter mais doque preciso*/
+void valida(char x[]){ /*Retorna com Print//Recomend√°vel string ter mais doque preciso*/
     int i,
         aux=1;
 
@@ -70,7 +69,7 @@ for(i=0;i<15;i++){
 
 }
 
-int main(){ /*Testando a funÁ„o*/
+int main(){ /*Testando a fun√ß√£o*/
     char cpf[15];
     printf("Digite o cpf: ");
     gets(cpf);
