@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /*Verifica apenas o formato do cpf '000.000.000-00'*/
+=======
+>>>>>>> 364eb26ed243644ac87b5c39a56000519e2e5f97
 #include<stdio.h>
 #include<string.h>
 #include<ctype.h>
