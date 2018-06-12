@@ -19,7 +19,7 @@ struct registro{
 
 }reg;
 
-int id(int dia, int mes, int ano) {
+int id(int dia, int mes, int ano) { //retorna idade de acordo com o nascimento
 
     int dAtual;
     int mAtual;
@@ -52,7 +52,7 @@ int valid(char x[]){ /*Retorna Valor//Recomendável string ter mais doque precis
     int i,
         aux=1;
 
-for(i=0;i<15;i++){
+    for(i=0;i<15;i++){
         if(((i>=0) && (i<=2)) || ((i>=4) && (i<=6)) || ((i>=8) && (i<=10)) || ((i==12) || (i==13))){
             if(isdigit(x[i])){
             }else{
