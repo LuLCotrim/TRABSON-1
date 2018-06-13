@@ -3,6 +3,7 @@
 #include<ctype.h>
 #include<stdlib.h>
 #include <time.h>
+#include <locale.h>
 
 struct data{
 
@@ -15,7 +16,7 @@ struct registro{
 
     char nome[30];
     struct data date;
-    char cpf[16];
+    char cpf[15];
 
 }reg;
 
@@ -78,63 +79,27 @@ int valid(char x[]){ /*Retorna Valor//Recomendável string ter mais doque precis
     return 1;
 }
 
-int valida(char x[]){ /*Retorna com Print//Recomendável string ter mais doque preciso*/
-    int i,
-        aux=1;
-
-for(i=0;i<15;i++){
-        if(((i>=0) && (i<=2)) || ((i>=4) && (i<=6)) || ((i>=8) && (i<=10)) || ((i==12) || (i==13))){
-            if(isdigit(x[i])){
-            }else{
-                aux=0;
-                break;
-            }
-        }else{
-        }if((i==3)||(i==7)){
-            if(x[i]!='.'){
-                aux=0;
-                break;
-            }
-        }else{
-        }if(i==11){
-            if(x[i]!='-'){
-                aux=0;
-                break;
-            }
-            }
-    }
-
-    if(aux==0){
-        printf("Cpf invalido.\n");
-        return 0;
-    }else{
-        printf("Cpf valido.\n");
-    }
-
-}
-
-
 int main(){
+
+    setlocale(LC_ALL, "Portuguese");
 
     int idade;
 
     printf("Digite o seu nome: \n");
-    fgets(reg.nome,30,stdin);
+    gets(reg.nome);
 
-    do{    
+    do{
         printf("Digite o seu CPF: \n");
-        
-        fgets(reg.cpf,15,stdin);
+
+        gets(reg.cpf);
         setbuf(stdin,NULL);
         if(valid(reg.cpf) == 0){
-            printf("Tamanho de cpf incorreto\n");
+            printf("CPF Invalido\n");
         }
 
-        valida(reg.cpf);
+    }while(valid(reg.cpf) == 0);
 
-    }while(valid(reg.cpf) == 0 || valida(reg.cpf) == 0);    
 
-    
     do{
 
         printf("Digite a data de nascimento\n");
@@ -159,10 +124,10 @@ int main(){
 
 
 
-    printf("seu nome é: %s",reg.nome);
+    printf("seu nome é: %s\n",reg.nome);
     printf("Você nasceu no dia: %d/%d/%d\n",reg.date.dia,reg.date.mes,reg.date.ano);
     printf("Você tem %d anos\n",idade);
-    printf("Seu cpf é: %s",reg.cpf);
+    printf("Seu cpf é: %s\n",reg.cpf);
 
 
 
